@@ -69,12 +69,14 @@ namespace CarLotSimulator
 			public bool IsDriveable { get; set; }
 
 			public Car() 
-			{ 
-			
+			{
+				Carlot.numberOfCars++;
 			}
 
 			public Car(string make, string model, int year, string engine)
 			{
+				Carlot.numberOfCars++;
+
 				Make = make;
 				Model = model;
 				Year = year;
@@ -97,6 +99,8 @@ namespace CarLotSimulator
 		{
 			public List<Car> allCars = new List<Car>();
 
+			public static int numberOfCars { get; set; }
+
 			public void PrintAllCarsToConsole()
 			{
 				for (int i = 0; i < allCars.Count; i++)
@@ -105,6 +109,7 @@ namespace CarLotSimulator
 				}
 			}
 		}
+
 
 
     }
